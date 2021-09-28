@@ -2,10 +2,10 @@
 # name and check amount using .calcualte_payroll() method exposed on each employee object
 
 class PayrollSystem:
-    def calculate_payroll(self, employees):
+    def calculate_payroll(self, employees): # employees = []
         print("Calculating payroll")
         print("===================")
-        
+
         for employee in employees:
             print(f"payroll for: {employee.id} - {employee.name}")
             print(f"- check amount {employee.calculate_payroll()}")
@@ -16,10 +16,16 @@ class PayrollSystem:
 # The HR system requires that every Employee processed must provide a .calculate_payroll() interface that 
 # returns the weekly salary for the employee
 
-class Employee:
+#from abc import ABC, abstractmethod
+
+class Employee():
     def __init__(self, id, name):
         self.id = id
         self.name = name
+
+    #@abstractmethod
+    #def calculate_payroll(self):
+        #pass
 
 class SalaryEmployee(Employee):
     def __init__(self, id, name, weekly_salary):
